@@ -1,88 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Upload - Hackathon Project</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="icon.png" type="image/png">
+
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
-            <div><img class="header-logo" src="{{ url_for('static', filename='logo.png') }}" alt=""></div>
-            <div class="nav-links">
-                <a href="{{ url_for('start') }}">Upload</a>
-                <a href="https://www.overleaf.com/gallery/tagged/cv">Templates</a>   
-                <a href="#">FAQ</a>
-                <a href="#">Contact</a>
-            </div>
+            <div> <img class="header-logo" src="logo.png" alt=""></div>
+
+            <nav class="nav-links">
+                <a href="#main-content">Upload</a>
+                <a href="https://www.overleaf.com/gallery/tagged/cv">Templates</a>
+                <a href="#faq-container">FAQ</a>
+                <a href="#about-container">About</a>
+                <a href="#footer">Contact</a>
+            </nav>
         </div>
     </nav>
 
-    
+
     <!-- Main Content Wrapper -->
     <div class="main-content">
-        <!-- Slide Show -->     
+        <!-- Slide Show -->
         <div class="slideshow-container">
             <div class="slide fade">
                 <div class="step-container">
                     <div class="step-text">
                         <div class="step-title">Step 1 - Extract Text from Any Document Format</div>
                         <div class="step-description">
-                            Our resume parser algorithm first <span class="highlight">identifies and extracts raw text</span> from formats like <span class="highlight">PDF, Word, and HTML</span>. It uses <span class="highlight">OCR</span> for image-based files and ensures text accuracy, which is crucial for ATS friendly parsing.
+                            Our resume parser algorithm first <span class="highlight">identifies and extracts raw
+                                text</span> from formats like <span class="highlight">PDF, Word, and HTML</span>. It
+                            uses <span class="highlight">OCR</span> for image-based files and ensures text accuracy,
+                            which is crucial for ATS friendly parsing.
                         </div>
                     </div>
                     <div class="step-image">
-                        <img src="https://skima.ai/static/products/ai-resume-parser/illustration-1.svg" alt="Document text extraction">
+                        <img src="https://skima.ai/static/products/ai-resume-parser/illustration-1.svg"
+                            alt="Document text extraction">
                     </div>
                 </div>
             </div>
-            
+
             <div class="slide fade">
                 <div class="step-container">
                     <div class="step-image">
-                        <img src="https://skima.ai/static/products/ai-resume-parser/illustration-2.svg" alt="Data organization">
+                        <img src="https://skima.ai/static/products/ai-resume-parser/illustration-2.svg"
+                            alt="Data organization">
                     </div>
                     <div class="step-text">
                         <div class="step-title">Step 2 - Organize Data into Logical Sections</div>
                         <div class="step-description">
-                            The extracted text is then organized into sections like <span class="blue-text">work experience, education, skills, and more</span>. The parser's advanced pattern recognition ensures structured segmentation even in varied resume layouts.
+                            The extracted text is then organized into sections like <span class="blue-text">work
+                                experience, education, skills, and more</span>. The parser's advanced pattern
+                            recognition ensures structured segmentation even in varied resume layouts.
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="slide fade">
                 <div class="step-container">
                     <div class="step-text">
                         <div class="step-title">Step 3 - Prioritize Relevant Information Using NLP</div>
                         <div class="step-description">
-                            <span class="highlight">Natural Language Processing (NLP)</span> identifies and ranks essential details, finding keywords and phrases that match job requirements. This prioritization optimizes candidate relevance for recruiters.
+                            <span class="highlight">Natural Language Processing (NLP)</span> identifies and ranks
+                            essential details, finding keywords and phrases that match job requirements. This
+                            prioritization optimizes candidate relevance for recruiters.
                         </div>
                     </div>
                     <div class="step-image">
-                        <img src="https://skima.ai/static/products/ai-resume-parser/illustration-3.svg" alt="NLP processing">
+                        <img src="https://skima.ai/static/products/ai-resume-parser/illustration-3.svg"
+                            alt="NLP processing">
                     </div>
                 </div>
             </div>
-            
+
             <div class="slide fade">
                 <div class="step-container">
                     <div class="step-image">
-                        <img src="https://skima.ai/static/products/ai-resume-parser/illustration-4.svg" alt="ATS output">
+                        <img src="https://skima.ai/static/products/ai-resume-parser/illustration-4.svg"
+                            alt="ATS output">
                     </div>
                     <div class="step-text">
                         <div class="step-title">Step 4 - Output Optimized for ATS Systems</div>
                         <div class="step-description">
-                            The final structured data is formatted to be <span class="blue-text">ATS compatible</span>, ensuring easy integration with HR software. This step <span class="blue-text">maximizes candidate visibility and accuracy</span> in ATS filtering.
+                            The final structured data is formatted to be <span class="blue-text">ATS compatible</span>,
+                            ensuring easy integration with HR software. This step <span class="blue-text">maximizes
+                                candidate visibility and accuracy</span> in ATS filtering.
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Navigation dots -->
             <div class="dots-container">
                 <span class="dot" onclick="currentSlide(1)"></span>
@@ -97,132 +117,233 @@
             <div class="upload-area" id="drop-zone">
                 <div class="upload-icon"></div>
                 <div class="upload-text">Lets Explore magic of RESUGENIE</div>
+                <input type="file" id="file-input" accept=".pdf,.doc,.docx" hidden>
+
                 <div class="button-container">
-                    <a href="{{ url_for('start') }}">
+                    <a href="http://127.0.0.1:8000/">
                         <button class="button">
                             <span class="gradient-border"></span>
                             <span class="button-content">
                                 <div class="button-inner">
                                     <span class="button-text">Let's get started</span>
-                                    <svg class="button-icon" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                                        <path clip-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" fill-rule="evenodd"></path>
+                                    <svg class="button-icon" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd"
+                                            d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                            fill-rule="evenodd"></path>
                                     </svg>
                                 </div>
                             </span>
                         </button>
                     </a>
                 </div>
+
+
+
             </div>
-        </div>
-    </div>
             <!-- <div class="accepted-files">
                 Accepted file types: PDF, DOC, DOCX
             </div> -->
             <div class="file-info" id="file-info"></div>
             <div class="progress-bar">
-                <div class="progress" id="progress"></div>  
+                <div class="progress" id="progress"></div>
             </div>
         </div>
-    </div> 
-        <!-- FAQ Section -->
-        <div class="faq-container">
-            <div class="faq-header">
-                <h1>Frequently Asked Questions</h1>
-                
-            </div>
-            
-            <div class="accordion">
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2>What is resume parsing?</h2>
-                        <button class="accordion-toggle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Resume parsing is the process of converting an unstructured resume document into structured data that can be easily analyzed and stored. This technology automatically extracts information like contact details, work experience, education, and skills from resumes in various formats.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2>How do I parse my resume?</h2>
-                        <button class="accordion-toggle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="accordion-content">
-                        <p>You can parse your resume by uploading it to our platform. We support various file formats including PDF, DOCX, and TXT. Once uploaded, our AI-powered parser will automatically extract and organize your information into a structured format.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2>How does resume parsing work?</h2>
-                        <button class="accordion-toggle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Resume parsing works through a combination of OCR (Optical Character Recognition), NLP (Natural Language Processing), and machine learning algorithms. The system first extracts text from the document, then identifies sections like education and work history, and finally categorizes specific information within each section.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2>How does resume parsing help recruiters?</h2>
-                        <button class="accordion-toggle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Resume parsing helps recruiters by automating the time-consuming process of manual data entry. It enables faster candidate screening, easier searchability of candidate information, improved candidate matching to job requirements, and standardized data for comparison across applications.</p>
-                    </div>
-                </div>
-                
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h2>Is my data secure when using the resume parser?</h2>
-                        <button class="accordion-toggle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="accordion-content">
-                        <p>Yes, your data is secure. We employ industry-standard encryption protocols for data transmission and storage. We don't share your information with third parties without your consent, and you retain full ownership of your data. Our systems are regularly audited for security compliance.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer Section -->
-        <footer class="footer">
-             <div class="footer-div">
-                <div><img class="footer-logo" src="logo.png" alt=""> </div>
-                <div class="social_media">
-                    <ul>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                    </ul>
-                </div>
-                <div>
-                    <p class="copyright">© 2025 Team Hactivate</p>
-                </div>
-    
-            </div>
-        </footer>
+    </div>
+    <!-- FAQ Section -->
+    <div class="faq-container" id="faq-container">
+        <div class="faq-header">
+            <h1>Frequently Asked Questions</h1>
 
-        <script src="{{ url_for('static', filename='slideshow.js') }}"></script>
-    
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h2>What is resume parsing?</h2>
+                    <button class="accordion-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="accordion-content">
+                    <p>Resume parsing is the process of converting an unstructured resume document into structured data
+                        that can be easily analyzed and stored. This technology automatically extracts information like
+                        contact details, work experience, education, and skills from resumes in various formats.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h2>How do I parse my resume?</h2>
+                    <button class="accordion-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="accordion-content">
+                    <p>You can parse your resume by uploading it to our platform. We support various file formats
+                        including PDF, DOCX, and TXT. Once uploaded, our AI-powered parser will automatically extract
+                        and organize your information into a structured format.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h2>How does resume parsing work?</h2>
+                    <button class="accordion-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="accordion-content">
+                    <p>Resume parsing works through a combination of OCR (Optical Character Recognition), NLP (Natural
+                        Language Processing), and machine learning algorithms. The system first extracts text from the
+                        document, then identifies sections like education and work history, and finally categorizes
+                        specific information within each section.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h2>How does resume parsing help recruiters?</h2>
+                    <button class="accordion-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="accordion-content">
+                    <p>Resume parsing helps recruiters by automating the time-consuming process of manual data entry. It
+                        enables faster candidate screening, easier searchability of candidate information, improved
+                        candidate matching to job requirements, and standardized data for comparison across
+                        applications.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h2>Is my data secure when using the resume parser?</h2>
+                    <button class="accordion-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="accordion-content">
+                    <p>Yes, your data is secure. We employ industry-standard encryption protocols for data transmission
+                        and storage. We don't share your information with third parties without your consent, and you
+                        retain full ownership of your data. Our systems are regularly audited for security compliance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-container" id="about-container    ">
+        <div class="hero">
+            <h1>About RESUGENIE</h1>
+            <p>
+                Revolutionizing resume parsing with advanced AI technology. Our platform streamlines recruitment by
+                converting unstructured resume data into actionable insights.
+            </p>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Smart Document Processing</h3>
+                <p>
+                    Extract text from multiple document formats including PDF, Word, and HTML with high accuracy using
+                    advanced OCR technology.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>AI-Powered Analysis</h3>
+                <p>
+                    Our NLP algorithms intelligently identify and categorize key information from resumes, making data
+                    extraction effortless.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Structured Data Output</h3>
+                <p>
+                    Convert unstructured resume content into organized, searchable data that integrates seamlessly with
+                    ATS systems.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Secure Processing</h3>
+                <p>
+                    Your data security is paramount. All documents are processed with enterprise-grade encryption and
+                    security protocols.
+                </p>
+            </div>
+        </div>
+
+        <div class="benefits">
+            <h2>Why Choose RESUGENIE?</h2>
+            <div class="benefit-card-container">
+                <div class="benefit-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Fast Processing</h3>
+                    <p>Parse hundreds of resumes in minutes</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>High Accuracy</h3>
+                    <p>99.9% accurate data extraction</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock technical assistance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer" id="footer">
+        <div class="footer-div">
+            <div><img class="footer-logo" src="logo.png" alt=""> </div>
+            <div class="social_media">
+                <ul>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </ul>
+            </div>
+            <div>
+                <p class="copyright">© 2025 Team Hactivate</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="slideshow.js"></script>
+
 </body>
+
 </html>
