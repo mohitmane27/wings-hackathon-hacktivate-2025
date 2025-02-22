@@ -112,14 +112,17 @@ function setupAccordion() {
 function setupFileUpload() {
   const dropZone = document.getElementById('drop-zone');
   const fileInput = document.getElementById('file-input');
+  const fileInfo = document.getElementById('file-info');
+  const progressBar = document.querySelector('.progress-bar');
+  const progress = document.getElementById('progress');
   
-  if (dropZone && fileInput) {
-      dropZone.addEventListener('click', (e) => {
-          if (!e.target.closest('.button-container')) {
-              fileInput.click();
-          }
-      });
-  }
+  // Open file browser when clicking on drop zone area (but not on the button)
+  dropZone.addEventListener('click', (e) => {
+    // Don't trigger file input if clicking on or inside the "Let's get started" button
+    if (!e.target.closest('.button-container') && !e.target.closest('a')) {
+      fileInput.click();
+    }
+  });
   
   // Handle file selection
   fileInput.addEventListener('change', (e) => {
@@ -227,7 +230,6 @@ function setupFileUpload() {
     progress.style.width = '0%';
   }
 }
-
 document.querySelectorAll('.nav-links a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
       // Ensure href starts with #
